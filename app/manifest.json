@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Open List Items",
+  "description": "This extension will open the selected list items in the new tabs.",
+  "version": "1.1",
+  "browser_action": {
+    "default_icon": "img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "jquery.min.js",
+        "main.js"
+      ],
+      "css": [
+        "css/style.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  }
+}
